@@ -1,0 +1,18 @@
+name: zio-http-quill-starter
+
+services:
+  db:
+    image: mysql:8.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ALLOW_REMOTE_CONNECTIONS: 'yes'
+    ports:
+      - 3306:3306
+    volumes:
+      - ./src/db/init.sql:/docker-entrypoint-initdb.d/init.sql

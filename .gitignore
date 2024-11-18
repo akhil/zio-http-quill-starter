@@ -1,0 +1,8 @@
+*.class
+.idea/
+.bsp/
+target/
+*.log
+*.out
+*.swp
+*.lock
